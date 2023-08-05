@@ -1,6 +1,9 @@
-Updated notes:
+Final notes:
 - Write a project plan
 - Research on the topic
 - Gather data and resources
 - DeÞne project milestones
 - Start initial implementation
+- Conduct testing and debugging
+- Finalize project documentation
+- Submit project for review
