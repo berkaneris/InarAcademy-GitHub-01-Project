@@ -11,7 +11,7 @@ public class Question_02_21 {
         double interestRate = input.nextDouble();
         System.out.print("Enter number of years: ");
         int years = input.nextInt();
-        double value = investmentAmount * (Math.pow(1 + (interestRate/12), years * 12)); // The result of inputs
+        double value = investmentAmount * (Math.pow(1 + (interestRate/1200), years * 12)); // The result of inputs
         System.out.print("Accumulated value is $");
         System.out.format("%.2f", value);
 
