@@ -13,7 +13,7 @@ public class Question_02_08 {
         long totalMinutes = totalSeconds / 60;
         long currentMinute = totalMinutes % 60;
         long totalHours = totalMinutes / 60;
-        long currentHour = totalHours % 24 + offset;
+        long currentHour = (totalHours + offset) % 24;
 
         System.out.println("The Current time is " + currentHour + ":"
                 + currentMinute + ":" + currentSecond );
