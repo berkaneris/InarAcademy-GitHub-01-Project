@@ -24,13 +24,14 @@ public class Question_03_09 {
         int digit2 = remainNumber % 10;
         remainNumber = remainNumber / 10;
         int digit1 = remainNumber % 10;
-        int digit10 = (digit1 * 1 + digit2 * 2 + digit3 * 3 + digit4 * 4 + digit5 * 5 + digit6 * 6 +
+        int digit10 = (digit1  + digit2 * 2 + digit3 * 3 + digit4 * 4 + digit5 * 5 + digit6 * 6 +
                 digit7 * 7 + digit8 * 8 + digit9 * 9) % 11;
-        if (digit1 == 0 && digit10 != 10) {
-            System.out.println("0" + number + digit10);
-        } else if (digit1 == 0 && digit10 == 10) {
+        System.out.print("The ISBN-10 number is ");
+        if (digit1 == 0 && digit10 == 10) {
             System.out.println("0" + number + "X");
-        } else if (digit1 != 0 && digit10 == 10) {
+        }else if (digit1 == 0 ) {
+            System.out.println("0" + number + digit10);
+        } else if (digit10 == 10) {
             System.out.println(number + "X");
         } else {
             System.out.println(number * 10 + digit10);
