@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Question_05_09 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String name = "";
-        double score = 0;
-        String name1 = "";
-        double score1 = 0;
+        String nameMax = "";
+        double scoreMax = 0;
+        String nameSecond = "";
+        double scoreSecond = 0;
         int count = 0;
         System.out.print("Enter the number of students: ");
         int numberOfStudents = input.nextInt();
@@ -17,58 +17,33 @@ public class Question_05_09 {
             System.out.println("The number of students is invalid ");
             System.exit(1);
         }
-        else if (numberOfStudents == 1){
-            System.out.print("Enter the name of " + (count + 1) + ". student: " );
-            name = input.nextLine();
-            System.out.print("Enter the score of " + (count + 1) + ". student: " );
-            score = input.nextInt();
-            input.nextLine();
-            count++;
-            System.out.println("The student is " + name+ " with the highest score " + score);
-            System.exit(1);
-        }else {
-            System.out.print("Enter the name of " + (count + 1) + ". student: ");
-            name = input.nextLine();
-            System.out.print("Enter the score of " + (count + 1) + ". student: ");
-            score = input.nextInt();
-            input.nextLine();
-            System.out.print("Enter the name of " + (count + 2) + ". student: ");
-            name1 = input.nextLine();
-            System.out.print("Enter the score of " + (count + 2) + ". student: ");
-            score1 = input.nextInt();
-            input.nextLine();
-            count += 2;
-            if (score1 > score) {
-                String tempName = name;
-                double tempScore = score;
-                name = name1;
-                score = score1;
-                name1 = tempName;
-                score1 = tempScore;
+        else {
+            while (count < numberOfStudents){
+                System.out.print("Enter the name of " + (count + 1) + ". student: " );
+                String name = input.nextLine();
+                System.out.print("Enter the score of " + (count + 1) + ". student: " );
+                double score = input.nextInt();
+                input.nextLine();
 
+                if (score > scoreMax ){
+                    scoreSecond = scoreMax;
+                    nameSecond = nameMax;
+                    scoreMax = score;
+                    nameMax = name;
+
+                } else if ( score > scoreSecond ) {
+                    scoreSecond = score;
+                    nameSecond = name;
+
+                }
+                count++;
             }
         }
-        while (count < numberOfStudents){
-            System.out.print("Enter the name of " + (count + 1) + ". student: " );
-            String name2 = input.nextLine();
-            System.out.print("Enter the score of " + (count + 1) + ". student: " );
-            double score2 = input.nextInt();
-            input.nextLine();
-
-             if (score2 > score ){
-                score1 = score;
-                name1 = name;
-                score = score2;
-                name = name2;
-
-            } else if (score > score2 && score2 > score1 ) {
-                score1 = score2;
-                name1 = name2;
-
-            }
-            count++;
+        if(numberOfStudents == 1){
+            System.out.println("The student is " + nameMax+ " with the highest score " + scoreMax);
+        }else{
+            System.out.println("The student is " + nameMax+ " with the highest score " + scoreMax);
+            System.out.println("The student is " + nameSecond+ " with the second-highest score " + scoreSecond);
         }
-        System.out.println("The student is " + name+ " with the highest score " + score);
-        System.out.println("The student is " + name1+ " with the second-highest score " + score1);
     }
 }
