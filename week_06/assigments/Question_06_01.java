@@ -5,9 +5,10 @@ public class Question_06_01 {
         final int NUMBERS_PER_LINE = 10;
         for (int i = 1 ; i <= 100 ; i++){
             if (i % NUMBERS_PER_LINE == 0){
-                System.out.println(getPentagonalNumber(i));
+                System.out.printf("%8d",getPentagonalNumber(i));
+                System.out.println();
             }else{
-                System.out.print(getPentagonalNumber(i) + " ");
+                System.out.printf("%8d",getPentagonalNumber(i));
             }
         }
 

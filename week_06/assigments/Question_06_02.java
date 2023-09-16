@@ -1,8 +1,14 @@
 package week_06.assigments;
 
+import java.util.Scanner;
+
 public class Question_06_02 {
     public static void main(String[] args) {
-        System.out.println(sumDigits(4587));
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a integer: ");
+        long number = input.nextLong();
+        System.out.println("The sum of the digits in " + number + " is " + sumDigits(number));
     }
     public static int sumDigits (long n){
         int sum = 0;
