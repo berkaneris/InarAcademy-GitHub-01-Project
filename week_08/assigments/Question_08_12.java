@@ -34,18 +34,14 @@ public class Question_08_12 {
 
         // Compute tax
         double tax = brackets[status][0] * rates[0];
-        int i ;
-        for ( i = 1; brackets[status][i] <= brackets[status][count - 1]; i++){
-            tax += (brackets[status][i] - brackets[status][i - 1]) * rates[i];
-            if(i == 4){
+        for (int i = 1; i < brackets[i].length; i++) {
+            if (income > brackets[status][i]) {
+                tax += (brackets[status][i] - brackets[status][i - 1]) * rates[i];
+            } else {
+                tax += (income - brackets[status][i - 1]) * rates[i];
                 break;
             }
         }
-        if(income > brackets[status][4]){
-            i += 1;
-        }
-        tax += (income - brackets[status][i - 1]) * rates[i];
-
         // Display the result
         System.out.println("Tax is " + (int)(tax * 100) / 100.0);
     }
